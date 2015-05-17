@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    h1.
+        #{title}
+    form#formAddcabrequest(name="addcabrequest",method="post",action="/cabrequests")
+        p Name: 
+            input#inputName(type="text", placeholder="ex. Aashish Negi", name="name")
+        p Phone:
+            input#inputPhone(type="text", placeholder="ex. 123456", name="phone")
+        p Pickup Time: 
+            input#inputPickup(type="text", name="pickup")
+        p Drop Time: 
+            input#inputDrop(type="text", name="drop")
+        p
+            button#btnSubmit(type="submit") submit

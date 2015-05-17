@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+    h1.
+        CabRequest ID #{cabrequest._id}
+    form(action='/cabrequests/#{cabrequest._id}/edit',method='post',name='updatecabrequest',enctype='application/x-www-form-urlencoded')
+        p Name: 
+            input#inputName(type='text', value='#{cabrequest.name}', name='name')
+        p Phone: 
+            input#inputPhone(type='text', value='#{cabrequest.phone}', name='phone')
+        p Pickup time: 
+            input#inputPickup(type='text', value='#{cabrequest.pickup}', name='pickup')
+        p Drop time: 
+            input#inputDrop(type='text', value='#{cabrequest.drop}', name='drop' )
+        p 
+            input(type='hidden',value='PUT',name='_method')
+        p 
+            button#btnSubmit(type='submit').
+                Update
